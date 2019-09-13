@@ -1,0 +1,17 @@
+{
+  "name": "magenest/sagepay-lib",
+  "description": "SagePay library for Magenest extensions",
+  "type": "magento2-library",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magenest\\SagepayLib\\": ""
+    }
+  }
+}
