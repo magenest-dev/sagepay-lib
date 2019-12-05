@@ -277,8 +277,10 @@ abstract class SagepayAbstractApi
         $data = array();
         foreach ($this->mandatory as $key)
         {
-            $data[$key] = $unsorted[$key];
-            unset($unsorted[$key]);
+            if(isset($data[$key])){
+                $data[$key] = $unsorted[$key];
+                unset($unsorted[$key]);
+            }
         }
         $data += $unsorted;
         $this->data = $data;
@@ -295,9 +297,9 @@ abstract class SagepayAbstractApi
 
         foreach ($this->mandatory as $value)
         {
-            if (is_null($this->data[$value]))
+            if (isset($this->data[$value]) && is_null($this->data[$value]))
             {
-                $emptyFields[] = $value;
+                    $emptyFields[] = $value;
             }
         }
 

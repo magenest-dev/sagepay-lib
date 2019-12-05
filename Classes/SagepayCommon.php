@@ -200,7 +200,7 @@ class SagepayCommon
             'ClientIPAddress' => $settings->getClientIPAddress(),
             'TransType' => '01'
         );
-        
+
         $query += $request->getData();
 
         $customer = $request->getCustomer();
@@ -231,7 +231,7 @@ class SagepayCommon
         if (!$settings->basketAsXmlDisabled())
         {
             $query['BasketXML'] = $basket->exportAsXml();
-        } 
+        }
         else
         {
             $query['Basket'] = $basket->exportAsXml(false);
@@ -292,6 +292,7 @@ class SagepayCommon
                 $query['TxType'] = $txType;
                 $query['CardType'] = 'PAYPAL';
                 $query['PayPalCallbackURL'] = $settings->getFullPaypalCallbackUrl() . '?vtx=' . $query['VendorTxCode'];
+                $query['ThreeDSNotificationURL'] = $settings->getThreeDSNotificationURL();
                 return $query;
 
             case Constants::SAGEPAY_TOKEN:
