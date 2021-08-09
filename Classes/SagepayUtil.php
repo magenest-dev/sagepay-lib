@@ -100,22 +100,12 @@ class SagepayUtil
         $blockSize = 16;
         $padChar = ord($input[strlen($input) - 1]);
 
-        /* Check for PadChar is less then Block size */
-//        if ($padChar > $blockSize)
-//        {
-//            throw new \SagepayLib\classes\SagepayApiException('Invalid encryption string');
-//        }
-        /* Check by padding by character mask */
-//        if (strspn($input, chr($padChar), strlen($input) - $padChar) != $padChar)
-//        {
-//            throw new \SagepayLib\classes\SagepayApiException('Invalid encryption string');
-//        }
 
         $unpadded = substr($input, 0, (-1) * $padChar);
         /* Chech result for printable characters */
         if (preg_match('/[[:^print:]]/', $unpadded))
         {
-            throw new \SagepayLib\classes\SagepayApiException('Invalid encryption string');
+            throw new SagepayApiException('Invalid encryption string');
         }
         return $unpadded;
     }
@@ -175,7 +165,7 @@ class SagepayUtil
         // Throw exception if string is malformed
         if (!preg_match('/^[0-9a-fA-F]+$/', $hex))
         {
-            throw new \SagepayLib\classes\SagepayApiException('Invalid encryption string');
+            throw new SagepayApiException('Invalid encryption string');
         }
         $strIn = pack('H*', $hex);
 
@@ -193,7 +183,7 @@ class SagepayUtil
         $hex = substr($strIn, 1);
         // Throw exception if string is malformed
         if (!preg_match('/^[0-9a-fA-F]+$/', $hex)) {
-            throw new \SagepayLib\classes\SagepayApiException('Invalid encryption string');
+            throw new SagepayApiException('Invalid encryption string');
         }
         $strIn = pack('H*', $hex);
         return $cryptor->decrypt($strIn);

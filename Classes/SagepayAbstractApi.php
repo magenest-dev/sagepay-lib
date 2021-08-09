@@ -307,7 +307,7 @@ abstract class SagepayAbstractApi
         {
             $fields = implode(', ', $emptyFields);
             $beVerb = count($emptyFields) == 1 ? 'is' : 'are';
-            throw new \SagepayLib\classes\SagepayApiException($fields . ' ' . $beVerb . " empty");
+            throw new SagepayApiException($fields . ' ' . $beVerb . " empty");
         }
         $this->sortData();
     }

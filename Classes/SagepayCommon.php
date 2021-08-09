@@ -305,7 +305,7 @@ class SagepayCommon
                 $query['ApplyAVSCV2'] = 2;
                 return $query;
             default :
-                throw new \SagepayLib\classes\SagepayApiException('Invalid integration type');
+                throw new SagepayApiException('Invalid integration type');
         }
     }
 
