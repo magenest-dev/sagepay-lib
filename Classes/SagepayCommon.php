@@ -136,7 +136,7 @@ class SagepayCommon
       
         $requestForLog= SagepayUtil::arrayToQueryStringRemovingSensitiveData($data,self::$nonSensitiveRequestDataArray ) ; 
         $response = SagepayUtil::queryStringToArray($rawresponse, "\r\n");
-        $responseForLog= SagepayUtil::queryStringToArrayRemovingSensitiveData($rawresponse, "\r\n", self::$nonSensitiveResponseDataArray );         
+        $responseForLog= SagepayUtil::queryStringToArrayRemovingSensitiveData($rawresponse, self::$nonSensitiveResponseDataArray, "\r\n");
 		
 		SagepayUtil::log("Request:" . PHP_EOL . $requestForLog);
         SagepayUtil::log("Response:" . PHP_EOL . json_encode($responseForLog));
@@ -271,6 +271,15 @@ class SagepayCommon
                 $query['TxType'] = $txType;
                 $query['Profile'] = $settings->getServerProfile();
                 $query['StoreToken'] = 1;
+                if ($settings->getSageServerCanSaveCard()) {
+                    $query['CreateToken'] = 1;
+                    $query['COFUsage'] = 'FIRST';
+                    $query['InitiatedType'] = 'CIT';
+                } else if ($settings->getSageServerToken()) {
+                    $query['Token'] = $settings->getSageServerToken();
+                    $query['COFUsage'] = 'SUBSEQUENT';
+                    $query['InitiatedType'] = 'CIT';
+                }
                 $query += self::_setAuxValue($query, 'AccountType', $settings->getAccountType());
                 return $query;
 

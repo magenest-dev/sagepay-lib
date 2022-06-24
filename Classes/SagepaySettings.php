@@ -324,29 +324,75 @@ class SagepaySettings
      */
     private $_threeDSNotificationURL = '';
 
+    /**
+     * @var
+     */
     private $_browserJavascriptEnabled;
 
-    private $_challengeWindowSize    = '05';
+    /**
+     * @var string
+     */
+    private $_challengeWindowSize = '05';
 
+    /**
+     * @var
+     */
     private $_browserUserAgent;
 
+    /**
+     * @var
+     */
     private $_browserAcceptHeader;
 
+    /**
+     * @var
+     */
     private $_browserLanguage;
 
+    /**
+     * @var
+     */
     private $_transType;
 
+    /**
+     * @var
+     */
     private $_clientIPAddress;
 
+    /**
+     * @var
+     */
     private $_browserJavaEnabled;
 
+    /**
+     * @var
+     */
     private $_browserColorDepth;
 
+    /**
+     * @var
+     */
     private $_browserScreenHeight;
 
+    /**
+     * @var
+     */
     private $_browserScreenWidth;
 
+    /**
+     * @var
+     */
     private $_browserTZ;
+
+    /**
+     * @var
+     */
+    private $_sageServerCanSaveCard;
+
+    /**
+     * @var
+     */
+    private $_sageServerToken;
 
     /**
      * Initialize the configuration depends on array or if $config is null,
@@ -386,6 +432,40 @@ class SagepaySettings
         }
 
         return self::$_instance;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSageServerCanSaveCard()
+    {
+        return $this->_sageServerCanSaveCard;
+    }
+
+    /**
+     * @param $canSaveCard
+     * @return void
+     */
+    public function setSageServerCanSaveCard($canSaveCard)
+    {
+        $this->_sageServerCanSaveCard = $canSaveCard;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSageServerToken()
+    {
+        return $this->_sageServerToken;
+    }
+
+    /**
+     * @param $sageServerToken
+     * @return void
+     */
+    public function setSageServerToken($sageServerToken)
+    {
+        $this->_sageServerToken = $sageServerToken;
     }
 
     /**
@@ -801,7 +881,7 @@ class SagepaySettings
      */
     public function setCustomerPasswordSalt($customerPasswordSalt)
     {
-        $this->_customerPasswordSalt = substr($customerPasswordSalt, 0, 7);
+        $this->_customerPasswordSalt = substr($customerPasswordSalt ?? '', 0, 7);
     }
 
     /**
@@ -1027,7 +1107,7 @@ class SagepaySettings
      */
     public function setLanguage($language)
     {
-        $this->_language = substr($language, 0, 2);
+        $this->_language = substr($language ?? '', 0, 2);
     }
 
     /**
@@ -1290,11 +1370,19 @@ class SagepaySettings
         }
     }
 
+    /**
+     * @param $url
+     * @return void
+     */
     public function setThreeDSNotificationURL($url)
     {
         $this->_threeDSNotificationURL = $url;
     }
 
+    /**
+     * @param $env
+     * @return string
+     */
     public function getThreeDSNotificationURL($env = '')
     {
         $base = $this->getSiteFqdn($env);
@@ -1494,6 +1582,10 @@ class SagepaySettings
         $this->_browserTZ = $browserTZ;
     }
 
+    /**
+     * @param $env
+     * @return string
+     */
     public function getFullPaypalCallbackUrl($env = '')
     {
         $base = $this->getSiteFqdn($env);

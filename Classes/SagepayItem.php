@@ -602,8 +602,8 @@ class SagepayItem
         $props = get_class_vars(__NAMESPACE__ . "\\" .'SagepayItem');
         foreach ($props as $name => $value)
         {
-            $name = substr($name, 1);
-            if (substr($name, 0, 9) === 'recipient')
+            $name = substr($name ?? '', 1);
+            if (substr($name ?? '', 0, 9) === 'recipient')
             {
                 continue;
             }

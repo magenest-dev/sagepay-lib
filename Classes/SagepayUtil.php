@@ -101,7 +101,7 @@ class SagepayUtil
         $padChar = ord($input[strlen($input) - 1]);
 
 
-        $unpadded = substr($input, 0, (-1) * $padChar);
+        $unpadded = substr($input ?? '', 0, (-1) * $padChar);
         /* Chech result for printable characters */
         if (preg_match('/[[:^print:]]/', $unpadded))
         {
@@ -134,7 +134,11 @@ class SagepayUtil
 
     static public function encryptAes($string, $key)
     {
-        $cryptor = new \phpseclib\Crypt\AES(\phpseclib\Crypt\Base::MODE_CBC);
+        if (class_exists(\phpseclib\Crypt\AES::class)) {
+            $cryptor = new \phpseclib\Crypt\AES(\phpseclib\Crypt\Base::MODE_CBC);
+        } else {
+            $cryptor = new \phpseclib3\Crypt\AES('cbc');
+        }
         $cryptor->setKey($key);
         $cryptor->setIV($key);
         $binCipherText = $cryptor->encrypt($string);
@@ -160,7 +164,7 @@ class SagepayUtil
         $strInitVector = $password;
 
         // Remove the first char which is @ to flag this is AES encrypted and HEX decoding.
-        $hex = substr($strIn, 1);
+        $hex = substr($strIn ?? '', 1);
 
         // Throw exception if string is malformed
         if (!preg_match('/^[0-9a-fA-F]+$/', $hex))
@@ -177,10 +181,14 @@ class SagepayUtil
 
     static public function decryptAes($strIn, $password)
     {
-        $cryptor = new \phpseclib\Crypt\AES(\phpseclib\Crypt\Base::MODE_CBC);
+        if (class_exists(\phpseclib\Crypt\AES::class)) {
+            $cryptor = new \phpseclib\Crypt\AES(\phpseclib\Crypt\Base::MODE_CBC);
+        } else {
+            $cryptor = new \phpseclib3\Crypt\AES('cbc');
+        }
         $cryptor->setKey($password);
         $cryptor->setIV($password);
-        $hex = substr($strIn, 1);
+        $hex = substr($strIn ?? '', 1);
         // Throw exception if string is malformed
         if (!preg_match('/^[0-9a-fA-F]+$/', $hex)) {
             throw new SagepayApiException('Invalid encryption string');
@@ -215,7 +223,7 @@ class SagepayUtil
         }
 
         // remove the last delimiter
-        return substr($queryString, 0, -1 * $delimiterLength);
+        return substr($queryString ?? '', 0, -1 * $delimiterLength);
     }
 
     static public function arrayToQueryStringRemovingSensitiveData(array $data,array $nonSensitiveDataKey, $delimiter = '&', $urlencoded = false)
@@ -238,7 +246,7 @@ class SagepayUtil
         }
 
         // remove the last delimiter
-        return substr($queryString, 0, -1 * $delimiterLength);
+        return substr($queryString ?? '', 0, -1 * $delimiterLength);
     }
     /**
      * Convert string to data array.
@@ -268,7 +276,7 @@ class SagepayUtil
         return $queryArray;
     }
 
-   static public function queryStringToArrayRemovingSensitiveData($data, $delimeter = "&", $nonSensitiveDataKey)
+   static public function queryStringToArrayRemovingSensitiveData($data, $nonSensitiveDataKey, $delimeter = "&")
     {  
         // Explode query by delimiter
         $pairs = explode($delimeter, $data);

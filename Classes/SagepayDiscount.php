@@ -49,7 +49,7 @@ class SagepayDiscount
     {
         $element = $basket->createElement('discount');
         $fixed = $basket->createElement('fixed', number_format($this->getFixed(), 2, ".", ""));
-        $description = $basket->createElement('description', substr($this->getDescription(), 0, 100));
+        $description = $basket->createElement('description', substr($this->getDescription() ?? '', 0, 100));
         $element->appendChild($fixed);
         $element->appendChild($description);
         return $element;

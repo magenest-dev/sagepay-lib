@@ -219,7 +219,7 @@ class SagepayBasket
      */
     public function setDescription($description)
     {
-        $this->_description = substr($description, 0, 100);
+        $this->_description = substr($description ?? '', 0, 100);
     }
 
     /**
