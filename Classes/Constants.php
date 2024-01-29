@@ -32,53 +32,53 @@ class Constants
     const SAGEPAY_TXN_COMPLETE = 'COMPLETE';
 
 // Define Server URLs for all integration methods.
-    const SAGEPAY_SERVER_SHOWPOST = 'https://test.sagepay.com/showpost/showpost.asp';
-    const SAGEPAY_SERVER_SIMULATOR = 'https://test.sagepay.com/Simulator/VSPDirectGateway.asp';
+    const SAGEPAY_SERVER_SHOWPOST = 'https://sandbox.opayo.eu.elavon.com/showpost/showpost.asp';
+    const SAGEPAY_SERVER_SIMULATOR = 'https://sandbox.opayo.eu.elavon.com/Simulator/VSPDirectGateway.asp';
 
-    const SAGEPAY_DIRECT_SERVER_LIVE = 'https://live.sagepay.com/gateway/service/vspdirect-register.vsp';
-    const SAGEPAY_DIRECT_SERVER_TEST = 'https://test.sagepay.com/gateway/service/vspdirect-register.vsp';
+    const SAGEPAY_DIRECT_SERVER_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/vspdirect-register.vsp';
+    const SAGEPAY_DIRECT_SERVER_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/vspdirect-register.vsp';
 
-    const SAGEPAY_DIRECT_SERVER_3D_SECURE_CALLBACK_LIVE = 'https://live.sagepay.com/gateway/service/direct3dcallback.vsp';
-    const SAGEPAY_DIRECT_SERVER_3D_SECURE_CALLBACK_TEST = 'https://test.sagepay.com/gateway/service/direct3dcallback.vsp';
+    const SAGEPAY_DIRECT_SERVER_3D_SECURE_CALLBACK_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/direct3dcallback.vsp';
+    const SAGEPAY_DIRECT_SERVER_3D_SECURE_CALLBACK_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/direct3dcallback.vsp';
 
-    const SAGEPAY_FORM_SERVER_LIVE = 'https://live.sagepay.com/gateway/service/vspform-register.vsp';
-    const SAGEPAY_FORM_SERVER_TEST = 'https://test.sagepay.com/gateway/service/vspform-register.vsp';
+    const SAGEPAY_FORM_SERVER_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/vspform-register.vsp';
+    const SAGEPAY_FORM_SERVER_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/vspform-register.vsp';
 
-    const SAGEPAY_SERVER_SERVER_LIVE = 'https://live.sagepay.com/gateway/service/vspserver-register.vsp';
-    const SAGEPAY_SERVER_SERVER_TEST = 'https://test.sagepay.com/gateway/service/vspserver-register.vsp';
+    const SAGEPAY_SERVER_SERVER_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/vspserver-register.vsp';
+    const SAGEPAY_SERVER_SERVER_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/vspserver-register.vsp';
 
-    const SAGEPAY_SHARED_REPEAT_TRANSACTION_LIVE = 'https://live.sagepay.com/gateway/service/repeat.vsp';
-    const SAGEPAY_SHARED_REPEAT_TRANSACTION_TEST = 'https://test.sagepay.com/gateway/service/repeat.vsp';
+    const SAGEPAY_SHARED_REPEAT_TRANSACTION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/repeat.vsp';
+    const SAGEPAY_SHARED_REPEAT_TRANSACTION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/repeat.vsp';
 
-    const SAGEPAY_SHARED_ABORT_TRANSACTION_LIVE = 'https://live.sagepay.com/gateway/service/abort.vsp';
-    const SAGEPAY_SHARED_ABORT_TRANSACTION_TEST = 'https://test.sagepay.com/gateway/service/abort.vsp';
+    const SAGEPAY_SHARED_ABORT_TRANSACTION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/abort.vsp';
+    const SAGEPAY_SHARED_ABORT_TRANSACTION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/abort.vsp';
 
-    const SAGEPAY_SHARED_RELEASE_TRANSACTION_LIVE = 'https://live.sagepay.com/gateway/service/release.vsp';
-    const SAGEPAY_SHARED_RELEASE_TRANSACTION_TEST = 'https://test.sagepay.com/gateway/service/release.vsp';
+    const SAGEPAY_SHARED_RELEASE_TRANSACTION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/release.vsp';
+    const SAGEPAY_SHARED_RELEASE_TRANSACTION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/release.vsp';
 
-    const SAGEPAY_SHARED_REFUND_TRANSACTION_LIVE = 'https://live.sagepay.com/gateway/service/refund.vsp';
-    const SAGEPAY_SHARED_REFUND_TRANSACTION_TEST = 'https://test.sagepay.com/gateway/service/refund.vsp';
+    const SAGEPAY_SHARED_REFUND_TRANSACTION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/refund.vsp';
+    const SAGEPAY_SHARED_REFUND_TRANSACTION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/refund.vsp';
 
-    const SAGEPAY_SHARED_VOID_TRANSACTION_LIVE = 'https://live.sagepay.com/gateway/service/void.vsp';
-    const SAGEPAY_SHARED_VOID_TRANSACTION_TEST = 'https://test.sagepay.com/gateway/service/void.vsp';
+    const SAGEPAY_SHARED_VOID_TRANSACTION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/void.vsp';
+    const SAGEPAY_SHARED_VOID_TRANSACTION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/void.vsp';
 
-    const SAGEPAY_SHARED_AUTHORISE_TRANSACTION_LIVE = 'https://live.sagepay.com/gateway/service/authorise.vsp';
-    const SAGEPAY_SHARED_AUTHORISE_TRANSACTION_TEST = 'https://test.sagepay.com/gateway/service/authorise.vsp';
+    const SAGEPAY_SHARED_AUTHORISE_TRANSACTION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/authorise.vsp';
+    const SAGEPAY_SHARED_AUTHORISE_TRANSACTION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/authorise.vsp';
 
-    const SAGEPAY_SHARED_CANCEL_TRANSACTION_LIVE = 'https://live.sagepay.com/gateway/service/cancel.vsp';
-    const SAGEPAY_SHARED_CANCEL_TRANSACTION_TEST = 'https://test.sagepay.com/gateway/service/cancel.vsp';
+    const SAGEPAY_SHARED_CANCEL_TRANSACTION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/cancel.vsp';
+    const SAGEPAY_SHARED_CANCEL_TRANSACTION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/cancel.vsp';
 
-    const SAGEPAY_SERVER_TOKEN_REGISTER_LIVE = 'https://live.sagepay.com/gateway/service/token.vsp';
-    const SAGEPAY_SERVER_TOKEN_REGISTER_TEST = 'https://test.sagepay.com/gateway/service/token.vsp';
+    const SAGEPAY_SERVER_TOKEN_REGISTER_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/token.vsp';
+    const SAGEPAY_SERVER_TOKEN_REGISTER_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/token.vsp';
 
-    const SAGEPAY_DIRECT_TOKEN_REGISTER_LIVE = 'https://live.sagepay.com/gateway/service/directtoken.vsp';
-    const SAGEPAY_DIRECT_TOKEN_REGISTER_TEST = 'https://test.sagepay.com/gateway/service/directtoken.vsp';
+    const SAGEPAY_DIRECT_TOKEN_REGISTER_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/directtoken.vsp';
+    const SAGEPAY_DIRECT_TOKEN_REGISTER_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/directtoken.vsp';
 
-    const SAGEPAY_TOKEN_REMOVE_LIVE = 'https://live.sagepay.com/gateway/service/removetoken.vsp';
-    const SAGEPAY_TOKEN_REMOVE_TEST = 'https://test.sagepay.com/gateway/service/removetoken.vsp';
+    const SAGEPAY_TOKEN_REMOVE_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/removetoken.vsp';
+    const SAGEPAY_TOKEN_REMOVE_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/removetoken.vsp';
 
-    const SAGEPAY_PAYPAL_COMPLETION_TEST = 'https://test.sagepay.com/gateway/service/complete.vsp';
-    const SAGEPAY_PAYPAL_COMPLETION_LIVE = 'https://live.sagepay.com/gateway/service/complete.vsp';
+    const SAGEPAY_PAYPAL_COMPLETION_TEST = 'https://sandbox.opayo.eu.elavon.com/gateway/service/complete.vsp';
+    const SAGEPAY_PAYPAL_COMPLETION_LIVE = 'https://live.opayo.eu.elavon.com/gateway/service/complete.vsp';
 
 // Define Settings for integration method.
     const SAGEPAY_FORM = 'form';
